@@ -7,8 +7,19 @@ param (
     [int]$prefix = 24,
     [int]$index = 13,
     [string]$dns1 = "8.8.8.8",
-    [string]$dns2 = "8.8.4.4"
+    [string]$dns2 = "8.8.4.4",
+    [switch]$interactive #triggers interactive prompts to set the variables instead
 )
+
+if($interactive){
+    Get-NetAdapter;
+    $adapterDisable = Read-Host "Please Enter the Name of the Adapter you wish to disable spelled exactly as described above.";
+    $index = Read-Host "Please enter the 'ifIndex' value of the interface you want to enable";
+    $newIP = Read-Host "Please enter the IP address of the interface you want to enable";
+    $prefix = Read-Host "Please enter the prefix of the IP for the interface you want to enable";
+    $ExpectedGateway = Read-Host "Please enter the Gateway IP for the interface you want to enable";
+    $Adapter = Read-Host "Please enter the Interface Name of the interface you want to enable";
+}
 
 #actual attempted network changes
 Disable-NetAdapter -Name $adapterDisable -Confirm:$false
