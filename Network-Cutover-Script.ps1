@@ -8,8 +8,24 @@ param (
     [int]$index = 13,
     [string]$dns1 = "8.8.8.8",
     [string]$dns2 = "8.8.4.4",
+    [switch]$google, #switch statement that when called sets DNS to google DNS
+    [switch]$cloudflare, #switch statement that when called sets DNS to cloudflare DNS
+    [switch]$opendns, #switch statement that when called sets DNS to OpenDNS
     [switch]$interactive #triggers interactive prompts to set the variables instead
 )
+
+if($googledns) {
+    $dns1 = "8.8.8.8"
+    $dns2 = "8.8.4.4"
+}
+elseif ($cloudflaredns){
+    $dns1 = "1.1.1.1"
+    $dns2 = "1.0.0.1"
+}
+elseif ($opendns){
+    $dns1 = "208.67.222.222"
+    $dns2 = "208.67.220.220"
+}
 
 if($interactive){
     Get-NetAdapter;
