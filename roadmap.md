@@ -9,7 +9,7 @@
 - [ ] Support for a default template file (designed primarily for companies that might be doing lots of network cutovers between NICs)
 - [ ] Help Parameter
 
-## Medium-Term (Q4 2026)
+## Medium-Term
 - [ ] Improvements to Error Catching
 - [ ] Interactive parameter will automatically exclude prompting the user for info already passed to the script via parameter
 
