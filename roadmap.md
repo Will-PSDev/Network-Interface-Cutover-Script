@@ -7,7 +7,7 @@
 
 ## Short-Term
 - [ ] Support for a default template file (designed primarily for companies that might be doing lots of network cutovers between NICs)
-- [ ] Help Parameter
+- [ ] Help Parameter (Partially Immlimented on 10/31/26)
 
 ## Medium-Term
 - [ ] Improvements to Error Catching
@@ -16,3 +16,4 @@
 ## Long-Term / Future Ideas
 - [ ] General Code Polishing
 - [ ] Logging
+- [ ] Performance Improvements
